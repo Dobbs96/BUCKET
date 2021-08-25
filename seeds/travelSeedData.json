@@ -1,0 +1,37 @@
+[
+  {
+    "location": "Cuba",
+    "budget": "2000",
+    "what_do": "sal@sal.com",
+    "starting_date": "April 20, 2021 07:00:00",
+    "ending_date": "June 21, 2021 17:00:00"
+  },
+  {
+    "location": "Italy",
+    "budget": "3500",
+    "what_do": "Visit Rome",
+    "starting_date": "April 20, 2021 07:00:00",
+    "ending_date": "April 27, 2021 17:00:00"
+  },
+  {
+    "location": "England",
+    "budget": "3000",
+    "what_do": "Check out Buckingham Palace",
+    "starting_date": "September 2, 2021 11:00:00",
+    "ending_date": "September 9, 2021 18:00:00"
+  },
+  {
+    "location": "Thailand",
+    "budget": "7000",
+    "what_do": "Meditate at Buddhist Temple",
+    "starting_date": "March 11, 2021 15:00:00",
+    "ending_date": "March 31, 2021 20:00:00"
+  },
+  {
+    "location": "Egypt",
+    "budget": "12000",
+    "what_do": "All about the pyramids",
+    "starting_date": "May 5, 2021 06:00:00",
+    "ending_date": "May 15, 2021 11:00:00"
+  }
+]

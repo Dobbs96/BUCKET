@@ -1,0 +1,42 @@
+[
+  {
+    "what_do": "surfing lesson",
+    "budget": "40",
+    "rating": "5"
+  },
+  {
+    "what_do": "sing karaoke",
+    "budget": "15",
+    "rating": "3"
+  },
+  {
+    "what_do": "ride double decker bus",
+    "budget": "25",
+    "rating": "5"
+  },
+  {
+    "what_do": "visit King Tut",
+    "budget": "55",
+    "rating": "5"
+  },
+  {
+    "what_do": "tour Vatican City",
+    "budget": "20",
+    "rating": "5"
+  },
+  {
+    "what_do": "read a new book",
+    "budget": "8",
+    "rating": "2"
+  },
+  {
+    "what_do": "play cards",
+    "budget": "0",
+    "rating": "1"
+  },
+  {
+    "what_do": "ride gandola",
+    "budget": "100",
+    "rating": "4"
+  }
+]
