@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Banana bread",
+    "price": "10",
+    "link": "https://www.simplyrecipes.com/recipes/banana_bread/"
+  },
+  {
+    "name": "Frozen margarita",
+    "price": "8",
+    "link": "https://www.delish.com/cooking/recipe-ideas/a27796403/best-frozen-margaritas-recipe/"
+  },
+  {
+    "name": "Samosa",
+    "price": "4",
+    "link": "https://www.indianhealthyrecipes.com/samosa-recipe-make-samosa/"
+  },
+  {
+    "name": "Tabbouleh",
+    "price": "5",
+    "link": "https://www.simplyrecipes.com/recipes/tabbouleh/"
+  }
+]
