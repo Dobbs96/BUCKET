@@ -23,6 +23,10 @@ Experience.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: { model: "user", key: "id" },
+    },
   },
   {
     sequelize,
@@ -32,4 +36,4 @@ Experience.init(
   }
 );
 
-module.exports = experience;
+module.exports = Experience;
