@@ -1,9 +1,9 @@
 const sequelize = require("../config/connection");
-const { User, Travel, Recipes, Experience } = require("../models");
+const { User, Travel, Recipe, Experience } = require("../models");
 
 const userSeedData = require("./userSeedData.json");
 const travelSeedData = require("./travelSeedData.json");
-const recipesSeedData = require("./recipesSeedData.json");
+const recipeSeedData = require("./recipeSeedData.json");
 const experienceSeedData = require("./experienceSeedData.json");
 
 const seedAll = async () => {
@@ -18,8 +18,8 @@ const seedAll = async () => {
     });
   }
 
-  for (const recipe of recipesSeedData) {
-    const newRecipe = await Recipes.create({
+  for (const recipe of recipeSeedData) {
+    const newRecipe = await Recipe.create({
       ...recipe,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
