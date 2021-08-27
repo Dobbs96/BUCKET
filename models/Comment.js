@@ -19,6 +19,18 @@ Comment.init(
       type: DataTypes.INTEGER,
       references: { model: "user", key: "id" },
     },
+    experience_id: {
+      type: DataTypes.INTEGER,
+      references: { model: "experience", key: "id" },
+    },
+    travel_id: {
+      type: DataTypes.INTEGER,
+      references: { model: "travel", key: "id" },
+    },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      references: { model: "recipe", key: "id" },
+    },
   },
   {
     sequelize,
