@@ -3,6 +3,7 @@ const router = require("express").Router();
 router.get("/", (req, res) => res.send("Hello recipe"));
 
 module.exports = router;
+<<<<<<< HEAD
 
 router.get("/", async (req, res) => {
   // find all recipe
@@ -50,3 +51,5 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
+=======
+>>>>>>> main

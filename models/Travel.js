@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 
 class Travel extends Model {}
 
-Destination.init(
+Travel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,6 +32,10 @@ Destination.init(
     ending_date: {
       type: DataTypes.DATE,
       allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: { model: "user", key: "id" },
     },
   },
   {
