@@ -3,7 +3,6 @@ const router = require("express").Router();
 router.get("/", (req, res) => res.send("Hello experience"));
 
 module.exports = router;
-<<<<<<< HEAD
 
 router.get("/", async (req, res) => {
   // find all Experience
@@ -51,5 +50,3 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
-=======
->>>>>>> main
