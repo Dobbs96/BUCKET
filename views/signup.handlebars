@@ -1,20 +1,12 @@
 {{! 
 Claudia
 --TODO: Form:
------------- username 
------------- password input 
------------- email input 
------------- confirm password? (If passField.value !== confField.value, error?) ------------ submit
-button
---TODO: Modal(s?):
-------------- If email matches an entry in DB:
-                Oops! You already have an account!
-------------- If passwords do not match:
-                Oops! Your passwords don't match!
-------------- If password is too short:
-                Oops! Your password is too short!
-In routes, kick out specific error messages. In public, check for those errors and display the correct modal.
- }}
+------------ email input
+------------ password input
+------------ confirm password?
+                (If passField.value !== confField.value, error?)
+------------ submit button
+ --}}
 
 <div class="row">
   <form class="col s12 signup-form">
@@ -48,3 +40,49 @@ In routes, kick out specific error messages. In public, check for those errors a
   <div><a href="/login">Login instead</a></div>
 </div>
 <script src="/js/signup.js"></script>
+
+ {{!-- Error modal, if email matches an entry in DB --}}
+  <button data-target="modal4" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <h4>Oops!</h4>
+      <p>It seems you already have an account. Please check your records and login.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+ </div>
+ <div>
+
+{{!-- Error modal, if password and confirm password do not match --}}
+  <button data-target="modal5" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Oops!</h4>
+      <p>Your passwords do not match! Please try again!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+ </div>
+ <div>
+
+ {{!-- Error modal, if email matches an entry in DB --}}
+  <button data-target="modal6" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <h4>Oops!</h4>
+      <p>Your password is too short!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+ </div>
+ <div>
+

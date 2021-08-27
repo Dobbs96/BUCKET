@@ -9,30 +9,34 @@
 -------------- Comment submit button
 --}}
 
-<div>
-
-</div>
-
-{{!--
---TODO: Modals:
-------- On successful comment "Your comment was added successfully!"
-------- On failed comment "Oops! Something went wrong!"
- --}}
- <div>
+{{!-- Success modal, comment was added correctly --}}
   <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <h4>Success!</h4>
+      <p>Your comment was added successfully!</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
     </div>
   </div>
  </div>
  <div>
 
+
+{{!-- Error modal, if comment was not added --}}
+  <button data-target="modal2" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Oops!</h4>
+      <p>Something went wrong. Please try adding your comment again!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
  </div>
+ <div>
