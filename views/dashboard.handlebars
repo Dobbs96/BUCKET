@@ -3,9 +3,58 @@
 ------------- Post Content
 ------------- Comments
 ------------- Delete Button
-------------- Edit Button }}
+------------- Edit Button
+Stephanie }}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Location</span>
+        <p>budget</p>
+        <p>description</p>
 
-{{! --TODO: New Post Card:
+      </div>
+      <div class="card-action">
+        <a href="#">edit</a>
+        <a href="#">delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">RecipeName</span>
+        <p>Price</p>
+        <p>Linktorecipe</p>
+
+      </div>
+      <div class="card-action">
+        <a href="#">edit</a>
+        <a href="#">delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">NewExperience</span>
+        <p>budget</p>
+        <p>Rating1to5</p>
+
+      </div>
+      <div class="card-action">
+        <a href="#">edit</a>
+        <a href="#">delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{! TODO: New Post Card:
 ------------- Input field for title
 ------------- Dropdown selection for category
 ------------- Input for content of post }}
@@ -22,10 +71,65 @@
 <br />
 <div id="demo"></div>
 
-{{! --TODO: Modals:
-------------- On delete, a message "Do you really want to delete this post?"
-------------- On edit, a message "Your post was edited successfully!"
-------------- On new post, a message "Your post was added successfully!"
-------------- On any error, a message "Oops! Something went wrong." }}
+  {{!-- On delete --}}
+  <button data-target="modal7" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <h4>Hey:</h4>
+      <p>Do you really want to delete this post?</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Yes</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
+    </div>
+  </div>
+ </div>
+ <div>
+
+ {{!-- On edit --}}
+  <button data-target="modal8" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <h4>Success!</h4>
+      <p>Your post was edited successfully!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+ </div>
+ <div>
+
+ {{!-- On post --}}
+  <button data-target="modal9" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <h4>Success!</h4>
+      <p>Your post was added successfully!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+ </div>
+ <div>
+
+ {{!-- On Error --}}
+  <button data-target="modal10" class="btn  red darken-1 modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal10" class="modal">
+    <div class="modal-content">
+      <h4>Oops!</h4>
+      <p>Something went wrong! Please try your post again.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+ </div>
+ <div>
 
 <script src="/js/newPost.js"></script>
