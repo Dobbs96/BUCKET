@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   // find all Comment
   // be sure to include its associated User
   const commentData = await Comment.findAll({
-    include: [{ model: User }],
+    include: [{ model: User, attributes: { exclude: ["password"] } }],
   });
   res.json(commentData);
 });

@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   // find all Travel
   // be sure to include its associated User
   const travelData = await Travel.findAll({
-    include: [{ model: User }],
+    include: [{ model: User, attributes: { exclude: ["password"] } }],
   });
   res.json(travelData);
 });
