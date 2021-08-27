@@ -10,8 +10,8 @@
 ------------- Dropdown selection for category
 ------------- Input for content of post }}
 {{! TRAVELS }}
-{{! <div class="input-field col s12">
-  <select>
+<div class="input-field col s12">
+  <select id="mySelect" onchange="myFunction()">
     <option value="" disabled selected>Choose New Category to Post</option>
     <option value="Travel">Travel</option>
     <option value="Recipe">Recipe</option>
@@ -20,103 +20,7 @@
   <label>Materialize Select</label>
 </div>
 <br />
-<div id="demo"></div> }}
-
-<h4>Travel</h4>
-<div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Location</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Budget</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Description</label>
-      </div>
-    </div>
-    <button
-      class="btn waves-effect waves-light"
-      type="submit"
-      name="action"
-    >Submit
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
-</div>
-{{! RECIPE }}
-<h4>Recipe</h4>
-
-<div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Recipe Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Price</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Link to Recipe</label>
-      </div>
-    </div>
-    <button
-      class="btn waves-effect waves-light"
-      type="submit"
-      name="action"
-    >Submit
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
-</div>
-
-{{! EXPERIENCE }}
-<h4>Experience</h4>
-<div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">New Experience</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="input_text" type="text" data-length="10" />
-        <label for="input_text">Budget</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6">
-        <p class="range-field">
-          <input type="range" id="test5" min="1" max="5" />
-        </p>
-      </div>
-    </div>
-    <button
-      class="btn waves-effect waves-light"
-      type="submit"
-      name="action"
-    >Submit
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
-</div>
+<div id="demo"></div>
 
 {{! --TODO: Modals:
 ------------- On delete, a message "Do you really want to delete this post?"
