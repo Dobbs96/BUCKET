@@ -1,14 +1,11 @@
 const router = require("express").Router();
-
-router.get("/", (req, res) => res.send("Hello recipe"));
-
-module.exports = router;
+const { Experience, Recipe, Travel, User } = require("../../models");
 
 router.get("/", async (req, res) => {
   // find all recipe
   // be sure to include its associated User
-  const RecipeData = await Recipe.findAll({
-    include: [{ model: User }],
+  const recipeData = await Recipe.findAll({
+    include: [{ model: User, attributes: { exclude: ["password"] } }],
   });
   res.json(recipeData);
 });
