@@ -1,7 +1,7 @@
 const User = require("./User");
-const Destination = require("./Travel");
+const Travel = require("./Travel");
 const Recipes = require("./Recipe");
-const Newexpierences = require("./Newexpierences");
+const Expierence = require("./Expierence");
 
 User.hasMany(Destinations, {
   foreignKey: "travel_id",
@@ -11,8 +11,8 @@ User.hasMany(Recipes, {
   foreignKey: "travel_id",
 });
 
-User.hasMany(Newexperiences, {
+User.hasMany(Experiences, {
   foreignKey: "travel_id",
 });
 
-module.exports = { User, Destination, Recipes, Experience };
+module.exports = { User, Travel, Recipes, Experience };
