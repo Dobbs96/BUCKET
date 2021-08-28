@@ -1,3 +1,21 @@
+{{! TODO: New Post Card:
+------------- Input field for title
+------------- Dropdown selection for category
+------------- Input for content of post }}
+{{! TRAVELS }}
+<div class="container">
+<div class="input-field col s12">
+  <select id="mySelect" onchange="myFunction()">
+    <option value="" disabled selected>Choose A Category</option>
+    <option value="Travel">Travel</option>
+    <option value="Recipe">Recipe</option>
+    <option value="Experience">Experience</option>
+  </select>
+  <label>New Post</label>
+</div>
+<br />
+<div id="demo"></div>
+
 {{! --TODO: Post Feed:
 ------------- Title
 ------------- Post Content
@@ -5,7 +23,7 @@
 ------------- Delete Button
 ------------- Edit Button
 Stephanie }}
-<div class="row">
+   <div class="row">
   <div class="col s12 m6">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
@@ -54,24 +72,8 @@ Stephanie }}
     </div>
   </div>
 </div>
-{{! TODO: New Post Card:
-------------- Input field for title
-------------- Dropdown selection for category
-------------- Input for content of post }}
-{{! TRAVELS }}
-<div class="input-field col s12">
-  <select id="mySelect" onchange="myFunction()">
-    <option value="" disabled selected>Choose A Category</option>
-    <option value="Travel">Travel</option>
-    <option value="Recipe">Recipe</option>
-    <option value="Experience">Experience</option>
-  </select>
-  <label>New Post</label>
 </div>
-<br />
-<div id="demo"></div>
-
-  {{!-- On delete --}}
+ {{!-- On delete --}}
   <button data-target="modal7" class="btn  red darken-1 modal-trigger">Modal</button>
   <!-- Modal Structure -->
   <div id="modal7" class="modal">
