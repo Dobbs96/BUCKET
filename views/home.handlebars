@@ -23,6 +23,12 @@
       </div>
       <div class="card-action">
         <a href="#">Comment</a>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>

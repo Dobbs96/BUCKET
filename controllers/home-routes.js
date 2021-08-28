@@ -4,13 +4,26 @@ const { Experience, Recipe, Travel, User, Comment } = require("../models");
 router.get("/", async (req, res) => {
   // find all Experience
   const experienceData = await Experience.findAll({
-    include: [{ model: User, attributes: { exclude: ["password"] } }],
+    include: [
+      {
+        model: Comment,
+      },
+      { model: User, attributes: { exclude: ["password"] } },
+    ],
   }).catch((err) => res.status(500).json(err));
+
   const recipeData = await Recipe.findAll({
-    include: [{ model: User, attributes: { exclude: ["password"] } }],
+    include: [
+      { model: Comment },
+      { model: User, attributes: { exclude: ["password"] } },
+    ],
   }).catch((err) => res.status(500).json(err));
+
   const travelData = await Travel.findAll({
-    include: [{ model: User, attributes: { exclude: ["password"] } }],
+    include: [
+      { model: Comment },
+      { model: User, attributes: { exclude: ["password"] } },
+    ],
   }).catch((err) => res.status(500).json(err));
 
   const experiences = await experienceData.map((experience) =>
