@@ -9,6 +9,6 @@ router.use("/api", apiRoutes);
 // /auth/login or /auth/logout or /auth/signup
 router.use("/auth", authRoutes);
 router.use("/", homeRoutes);
-router.use("/dashboard", dashboardRoutes);
+router.use("/dashboard", withAuth, dashboardRoutes);
 
 module.exports = router;
