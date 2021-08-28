@@ -38,3 +38,5 @@ sequelize.sync({ force: false }).then(() => {
   // console.log(sequelize);
   app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 });
+
+//logout route is working, but withAuth isn't working on dashboard and I have NO IDEA WHY
