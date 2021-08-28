@@ -7,19 +7,16 @@ router.get("/", async (req, res) => {
     where: {
       user_id: req.session.userId,
     },
-    include: [{ model: User, attributes: { exclude: ["password"] } }],
   }).catch((err) => res.status(500).json(err));
   const recipeData = await Recipe.findAll({
     where: {
       user_id: req.session.userId,
     },
-    include: [{ model: User, attributes: { exclude: ["password"] } }],
   }).catch((err) => res.status(500).json(err));
   const travelData = await Travel.findAll({
     where: {
       user_id: req.session.userId,
     },
-    include: [{ model: User, attributes: { exclude: ["password"] } }],
   }).catch((err) => res.status(500).json(err));
 
   const experiences = await experienceData.map((experience) =>
@@ -29,7 +26,9 @@ router.get("/", async (req, res) => {
   const travels = await travelData.map((travel) => travel.get({ plain: true }));
 
   console.log("inside dashboard-routes.js get / ");
-  res.render("home", {
+  console.log(req.session.loggedIn);
+  console.log(req.session.userId);
+  res.render("dashboard", {
     experiences,
     recipes,
     travels,

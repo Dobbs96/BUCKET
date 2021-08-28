@@ -19,7 +19,6 @@ router.get("/", async (req, res) => {
   const recipes = await recipeData.map((recipe) => recipe.get({ plain: true }));
   const travels = await travelData.map((travel) => travel.get({ plain: true }));
 
-  console.log("inside dashboard-routes.js get / ");
   res.render("home", {
     experiences,
     recipes,
@@ -27,8 +26,14 @@ router.get("/", async (req, res) => {
     loggedIn: req.session.loggedIn,
   });
 });
-router.get("/login", (req, res) => res.render("login"));
+
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
+});
 router.get("/signup", (req, res) => res.render("signup"));
-router.get("/dashboard", (req, res) => res.render("dashboard"));
 
 module.exports = router;
