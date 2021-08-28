@@ -17,6 +17,7 @@ router.post("/", async (req, res) => {
     what_do,
     budget,
     rating,
+    user_id: req.session.userId,
   }).catch((err) => res.status(500).json(err.message));
   res.redirect("/dashboard");
 });

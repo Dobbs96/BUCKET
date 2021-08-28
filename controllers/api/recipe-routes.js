@@ -14,9 +14,12 @@ router.post("/", async (req, res) => {
   // create a new Recipe
   let { name, link, price } = req.body;
 
-  const newRecipe = await Recipe.create({ name, link, price }).catch((err) =>
-    res.status(500).json(err.message)
-  );
+  const newRecipe = await Recipe.create({
+    name,
+    link,
+    price,
+    user_id: req.session.userId,
+  }).catch((err) => res.status(500).json(err.message));
   res.redirect("/dashboard");
 });
 
