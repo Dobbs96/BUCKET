@@ -16,7 +16,16 @@
 
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
+        <a href="travel/{{id}}" id="comment" class="waves-effect waves-light btn" >Comment</a>
+        <form class="col s12" >
+        <div id="new-comment"></div>
+        </form>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>
@@ -33,7 +42,16 @@
         <p>written by {{user.username}}</p>
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
+        <a href="recipe/{{id}}" id="comment" class="waves-effect waves-light btn" >Comment</a>
+        <form class="col s12" >
+        <div id="new-comment"></div>
+        </form>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>
@@ -50,8 +68,17 @@
         <p>written by {{user.username}}</p>
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
-      </div>
+        <a href="experience/{{id}}" id="comment" class="waves-effect waves-light btn" >Comment</a>
+        <form class="col s12" >
+        <div id="new-comment"></div>
+        </form>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
+      </div>      
     </div>
   </div>
 </div>
@@ -94,3 +121,4 @@
   </div>
  </div>
  <div>
+

@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const { Experience, Recipe, Travel, User } = require("../../models");
+const { Experience, Recipe, Travel, User, Comment } = require("../../models");
 
 // GET /api/user
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
-      include: [Experience, Recipe, Travel],
+      include: [Experience, Recipe, Travel, Comment],
       attributes: { exclude: ["password"] },
     });
     res.status(200).json(userData);
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-      include: [Experience, Recipe, Travel],
+      include: [Experience, Recipe, Travel, Comment],
       attributes: { exclude: ["password"] },
     });
     if (!userData)
