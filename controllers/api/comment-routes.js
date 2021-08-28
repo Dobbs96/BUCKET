@@ -12,12 +12,32 @@ router.get("/", async (req, res) => {
   res.json(commentData);
 });
 
-router.post("/", async (req, res) => {
+router.post("/experience/:id", async (req, res) => {
   // create a new Comment
-  const newComment = await Comment.create(req.body).catch((err) =>
-    res.status(500).json(err.message)
-  );
-  res.status(200).json(newComment);
+  const newComment = await Comment.create({
+    comment: req.body.comment,
+    user_id: req.session.userId,
+    experience_id: req.params.id,
+  }).catch((err) => res.status(500).json(err.message));
+  res.status(200).redirect("/");
+});
+router.post("/travel/:id", async (req, res) => {
+  // create a new Comment
+  const newComment = await Comment.create({
+    comment: req.body.comment,
+    user_id: req.session.userId,
+    travel_id: req.params.id,
+  }).catch((err) => res.status(500).json(err.message));
+  res.status(200).redirect("/");
+});
+router.post("/recipe/:id", async (req, res) => {
+  // create a new Comment
+  const newComment = await Comment.create({
+    comment: req.body.comment,
+    user_id: req.session.userId,
+    recipe_id: req.params.id,
+  }).catch((err) => res.status(500).json(err.message));
+  res.status(200).redirect("/");
 });
 
 router.put("/:id", async (req, res) => {
