@@ -14,10 +14,16 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   // create a new Travel
-  const newTravel = await Travel.create(req.body).catch((err) =>
-    res.status(500).json(err.message)
-  );
-  res.status(200).json(newTravel);
+  let { location, budget, description, starting_date, ending_date } = req.body;
+  const newTravel = await Travel.create({
+    location,
+    budget,
+    what_do: description,
+    starting_date,
+    ending_date,
+    user_id: req.session.userId,
+  }).catch((err) => res.status(500).json(err.message));
+  res.redirect("/dashboard");
 });
 
 router.put("/:id", async (req, res) => {
