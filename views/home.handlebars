@@ -22,7 +22,8 @@
 
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
+        <a id="comment" class="waves-effect waves-light btn" onclick="newComment()">Comment</a>
+        <div id="new-comment"></div>
         {{#each comments as |comment|}}
         <div>
         {{!-- <p>{{user.username}}</p> --}}
@@ -100,3 +101,5 @@
   </div>
  </div>
  <div>
+
+   <script src="/js/newComment.js"></script>
