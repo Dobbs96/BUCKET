@@ -12,10 +12,12 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   // create a new Recipe
-  const newRecipe = await Recipe.create(req.body).catch((err) =>
+  let { name, link, price } = req.body;
+
+  const newRecipe = await Recipe.create({ name, link, price }).catch((err) =>
     res.status(500).json(err.message)
   );
-  res.status(200).json(newRecipe);
+  res.redirect("/dashboard");
 });
 
 router.put("/:id", async (req, res) => {

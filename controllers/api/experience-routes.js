@@ -12,10 +12,13 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   // create a new Experience
-  const newExperience = await Experience.create(req.body).catch((err) =>
-    res.status(500).json(err.message)
-  );
-  res.status(200).json(newExperience);
+  let { what_do, budget, rating } = req.body;
+  const newExperience = await Experience.create({
+    what_do,
+    budget,
+    rating,
+  }).catch((err) => res.status(500).json(err.message));
+  res.redirect("/dashboard");
 });
 
 router.put("/:id", async (req, res) => {
