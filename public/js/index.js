@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //----Login
 /*
 
-  id= modal3- If res.status = 500, trigger modal
+  id= modal3- If res.status = 400, trigger modal
 
 */
 //----Signup
