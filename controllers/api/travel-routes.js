@@ -40,6 +40,7 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
+  console.log(req.params.id);
   // delete a Travel by its "id" value
   const deletedTravel = await Travel.destroy({
     where: { id: req.params.id },
@@ -49,9 +50,14 @@ router.delete("/:id", async (req, res) => {
       error_message: `Cannot be deleted because the Travel with ID ${req.params.id} does not exist.`,
     });
   }
-  res
-    .status(200)
-    .json({ message: "The Travel has successfully been deleted." });
+  return (
+    res
+      .status(200)
+      // .json({ message: "The Travel has successfully been deleted." })
+      .json(deletedTravel)
+      .send()
+      .end()
+  );
 });
 
 module.exports = router;

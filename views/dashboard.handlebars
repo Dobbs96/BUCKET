@@ -15,7 +15,7 @@
 <br />
 <div id="demo"></div>
 
-
+<div class="testContainerTravel">
 {{#each travels as |travel|}}
 <div class="row">
   <div class="col s12 m9">
@@ -30,15 +30,16 @@
         <p>{{what_do}}</p>
       </div>
       <div class="card-action">
-        <button href="" data-target="modal8" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
-        <button href="#" data-target="modal7" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Delete</button>
+        <button href="#" id="updateTrvlBtnHandlebars{{id}}" data-id="{{id}}" data-location="{{location}}" data-budget="{{budget}}" data-whatdo="{{what_do}}" data-startingDate="{{starting_date}}" data-endingDate="{{ending_date}}" data-target="modal{{id}}" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
+        {{!-- <button href="#" id="deleteTrvlBtnHandlebars{{id}}" data-target="modal7" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Delete</button> --}}
+        <button href="#" id="deleteTrvlBtnHandlebars{{id}}" data-id="{{id}}" class="btn hoverable btn-small white-text amber darken-1">Delete</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Modal Update Travel -->
-<div id="modal8" class="modal">
+<div id="modal{{id}}" class="modal">
   <div class="modal-content">
     <h4>Update: Travel</h4>
     <div class="row">
@@ -93,7 +94,9 @@
   </div>
 </div>
 {{/each}}
+</div>
 
+<div class="testContainerRecipe">
 {{#each recipes as |recipe|}}
 <div class="row">
   <div class="col s12 m9">
@@ -105,7 +108,7 @@
       </div>
       <div class="card-action">
         <button href="#" data-target="modal9" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
-        <button href="#" data-target="modal7" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Delete</button>
+        <button href="#" id="deleteRecipeBtnHandlebars{{id}}" data-id="{{id}}" class="btn hoverable btn-small white-text amber darken-1">Delete</button>
       </div>
     </div>
   </div>
@@ -153,8 +156,10 @@
   </div>
 </div>
 {{/each}}
+</div>
 
 
+<div class="testContainerExperience">
 {{#each experiences as |experience|}}
 <div class="row">
 <div class="col s12 m9">
@@ -166,7 +171,7 @@
     </div>
     <div class="card-action">
       <button href="" data-target="modal10" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
-      <button href="#" data-target="modal7" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Delete</button>
+      <button href="#" id="deleteExperienceBtnHandlebars{{id}}" data-id="{{id}}" class="btn hoverable btn-small white-text amber darken-1">Delete</button>
     </div>
   </div>
 </div>
@@ -214,7 +219,7 @@
   </div>
 <div>
 {{/each}}
-
+</div>
 
 <div class="parallax-container">
   <div class="parallax"><img src="Parallax_IMGS/igloo_blue_teal.jpg"></div>
@@ -237,3 +242,4 @@
 
 <script src="/js/newPost.js"></script>
 <script src="/js/updatePost.js"></script>
+<script src="/js/deletePost.js"></script>

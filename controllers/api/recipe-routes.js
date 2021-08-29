@@ -46,9 +46,14 @@ router.delete("/:id", async (req, res) => {
       error_message: `Cannot be deleted because the Recipe with ID ${req.params.id} does not exist.`,
     });
   }
-  res
-    .status(200)
-    .json({ message: "The Recipe has successfully been deleted." });
+  return (
+    res
+      .status(200)
+      //.json({ message: "The Recipe has successfully been deleted." });
+      .json(deletedRecipe)
+      .send()
+      .end()
+  );
 });
 
 module.exports = router;
