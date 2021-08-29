@@ -37,75 +37,63 @@
   </div>
 </div>
 
- <!-- Update Travel -->
- {{!-- <div class="travel-card-container"> --}}
-  <div id="modal8" class="modal">
-    <div class="modal-content">
-      <h4>Update:</h4>
-      <div class="row">
-        <div class="travel-card-container">
-        <form class="col s12 new-post-travel" action="/api/travel/{{id}}" method="PUT">
-        {{!-- <form class="col s12 new-post-travel"> --}}
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="location" data-location="{{location}}" name="location" type="text" value="{{location}}" required />
-              <label class="active" for="location">{{location}}</label>
-            </div>
+<!-- Modal Update Travel -->
+<div id="modal8" class="modal">
+  <div class="modal-content">
+    <h4>Update: Travel</h4>
+    <div class="row">
+      <div class="travel-card-container">
+      {{!-- <form class="col s12 new-post-travel" action="/api/travel/{{id}}" method="PUT"> --}}
+      <form class="col s12 new-post-travel">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="location" name="location" type="text" value="{{location}}" required />
+            <label class="active" for="location">{{location}}</label>
           </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="budget" data-budget="{{budget}}" name="budget" type="text" value="{{budget}}" required/>
-              <label class="active" for="budget">{{budget}}</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="starting-date" data-starting-date="{{format_date starting_date}}" name="starting_date" type="text" value="{{format_date starting_date}}" required/>
-              <label class="active" for="starting_date">{{format_date starting_date}}</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="ending-date" data-ending-date="{{format_date ending_date}}" name="ending_date" type="text" value="{{format_date ending_date}}" required/>
-              <label class="active" for="ending_date">{{format_date ending_date}}</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="what-do" data-whatdo="{{what_do}}" type="text" name="what_do" value="{{what_do}}" required/>
-              <label class="active" for="description">{{what_do}}</label>
-            </div>
-          </div>
-          <button
-            class="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-            id="updateTrvlBtn"
-            data-id="{{id}}"
-          >Update
-            <i class="material-icons right">send</i>
-          </button>
-        </form>
         </div>
-        {{!-- <button
-            class="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-            id="updateTravelBtn"
-            data-id="{{id}}"
-          >Update
-            <i class="material-icons right">send</i>
-          </button> --}}
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="budget" name="budget" type="text" value="{{budget}}" required/>
+            <label class="active" for="budget">{{budget}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="starting-date" name="starting_date" type="text" value="{{format_date starting_date}}" required/>
+            <label class="active" for="starting_date">{{format_date starting_date}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="ending-date" name="ending_date" type="text" value="{{format_date ending_date}}" required/>
+            <label class="active" for="ending_date">{{format_date ending_date}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="what-do" type="text" name="what_do" value="{{what_do}}" required/>
+            <label class="active" for="description">{{what_do}}</label>
+          </div>
+        </div>
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          id="updateTrvlBtn"
+          data-id="{{id}}"
+        >Update
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
       </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
   </div>
-{{!-- </div> --}}
-
-
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
 {{/each}}
+
 {{#each recipes as |recipe|}}
 <div class="row">
   <div class="col s12 m9">
@@ -122,118 +110,90 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Update Recipe -->
+<div id="modal9" class="modal">
+  <div class="modal-content">
+    <h4>Update: Recipe</h4>
+    <div class="row">
+      {{!-- <form class="col s12 new-post-recipe" action="/api/recipe" method="PUT"> --}}
+      <form class="col s12 new-post-recipe">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="name" type="text" name="name" data-length="10" value="{{name}}" required/>
+            <label for="input_text">Recipe Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="price" type="text" name="price" data-length="10" value="${{price}}" required/>
+            <label for="input_text">Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="link" type="text" name="link" data-length="10" value="{{link}}" required/>
+            <label for="input_text">Link to Recipe</label>
+          </div>
+        </div>
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          id="updateRecipeBtn"
+          data-id="{{id}}"
+        >Update
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+</div>
 {{/each}}
+
+
 {{#each experiences as |experience|}}
 <div class="row">
-  <div class="col s12 m9">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">{{what_do}}</span>
-        <p>Budget: ${{budget}}</p>
-        <p>Rate of going is {{rating}} out of 5</p>
-      </div>
-      <div class="card-action">
-        <button href="" data-target="modal10" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
-        <button href="#" data-target="modal7" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Delete</button>
-      </div>
+<div class="col s12 m9">
+  <div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+      <span class="card-title">{{what_do}}</span>
+      <p>Budget: ${{budget}}</p>
+      <p>Rate of going is {{rating}} out of 5</p>
+    </div>
+    <div class="card-action">
+      <button href="" data-target="modal10" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
+      <button href="#" data-target="modal7" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Delete</button>
     </div>
   </div>
 </div>
-{{/each}}
 </div>
 
-
- <div class="parallax-container">
-      <div class="parallax"><img src="Parallax_IMGS/igloo_blue_teal.jpg"></div>
-    </div>
-
-
-
- {{!-- On delete --}}
-  <!-- Modal Structure -->
-  <div id="modal7" class="modal">
-    <div class="modal-content">
-      <h4>Hey:</h4>
-      <p>Do you really want to delete this post?</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Yes</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
-    </div>
-  </div>
- </div>
- <div>
-
-
- {{!-- On edit --}}
-  
-
-
-  <!-- Update Recipe -->
-  <div id="modal9" class="modal">
-    <div class="modal-content">
-      <h4>Update:</h4>
-      <div class="row">
-    <form class="col s12 new-post-recipe" action="/api/recipe" method="PUT">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="input_text" type="text" name="name" data-length="10" required/>
-          <label for="input_text">Recipe Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="input_text" type="text" name="price" data-length="10" required/>
-          <label for="input_text">Price</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="input_text" type="text" name="link" data-length="10" required/>
-          <label for="input_text">Link to Recipe</label>
-        </div>
-      </div>
-      <button
-        class="btn waves-effect waves-light"
-        type="submit"
-        name="action"
-      >Submit
-        <i class="material-icons right">send</i>
-      </button>
-    </form>
-  </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
-    </div>
-  </div>
- </div>
- <div>
-
- {{!-- Update Experience --}}
-  <!-- Modal Structure -->
-  <div id="modal10" class="modal">
-    <div class="modal-content">
-      <h4>Update:</h4>
-      <h4>Experience</h4>
+<!-- Modal Update Experience -->
+<div id="modal10" class="modal">
+  <div class="modal-content">
+    <h4>Update: Experience</h4>
     <div class="row">
       <form class="col s12 new-post-experience" action="/api/experience" method="POST">
         <div class="row">
           <div class="input-field col s6">
-            <input id="input_text" type="text" name="what_do" data-length="10" required />
+            <input id="what-do" type="text" name="what_do" data-length="10" value="{{what_do}}" required />
             <label for="input_text">New Experience</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
-            <input id="input_text" type="text" name="budget" data-length="10" required />
+            <input id="budget" type="text" name="budget" data-length="10" value="{{budget}}" required />
             <label for="input_text">Budget</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <p class="range-field">
-              <input type="range" id="test5" name="rating" min="1" max="5" />
+              <input type="range" id="rating" name="rating" min="1" max="5" value="{{rating}}" />
             </p>
           </div>
         </div>
@@ -241,18 +201,39 @@
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
-        >Submit
+          id="updateExpBtn"
+          data-id="{{id}}"
+        >Update
           <i class="material-icons right">send</i>
         </button>
       </form>
     </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
-    </div>
   </div>
- </div>
- <div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+  </div>
+<div>
+{{/each}}
+
+
+<div class="parallax-container">
+  <div class="parallax"><img src="Parallax_IMGS/igloo_blue_teal.jpg"></div>
+</div>
+
+
+
+{{!-- On delete --}}
+<!-- Modal Structure -->
+<div id="modal7" class="modal">
+  <div class="modal-content">
+    <h4>Hey:</h4>
+    <p>Do you really want to delete this post?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Yes</a>
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
+  </div>
+</div>
 
 <script src="/js/newPost.js"></script>
 <script src="/js/updatePost.js"></script>
