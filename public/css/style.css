@@ -16,6 +16,18 @@ footer {
   padding-left: 3px;
 }
 
+#newPostLabel {
+  padding-top: 15px;
+}
+
+#mySelect {
+  padding-top: 20px;
+}
+
+.parallax-container {
+  height: 350px;
+}
+
 @media only screen and (max-width: 992px) {
   header,
   main,

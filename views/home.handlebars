@@ -1,13 +1,7 @@
-{{!-- 
---TODO: Post Feed (from db)
--------- Title (name/location/what_do)
--------- Category
--------- Content (other info from model)
--------- Comments
--------- If logged in:
--------------- Comment input field
--------------- Comment submit button
---}}
+ <div class="parallax-container">
+      <div class="parallax"><img src="Parallax_IMGS/desert_blue.jpg"></div>
+    </div>
+
 <div class="container">
 {{#each travels as |travel|}}
    <div class="row">
@@ -22,7 +16,16 @@
 
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
+        <a href="travel/{{id}}" id="comment" class="waves-effect waves-light btn" >Comment</a>
+        <form class="col s12" >
+        <div id="new-comment"></div>
+        </form>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>
@@ -39,7 +42,16 @@
         <p>written by {{user.username}}</p>
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
+        <a href="recipe/{{id}}" id="comment" class="waves-effect waves-light btn" >Comment</a>
+        <form class="col s12" >
+        <div id="new-comment"></div>
+        </form>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>
@@ -56,16 +68,31 @@
         <p>written by {{user.username}}</p>
       </div>
       <div class="card-action">
-        <a href="#">Comment</a>
-      </div>
+        <a href="experience/{{id}}" id="comment" class="waves-effect waves-light btn" >Comment</a>
+        <form class="col s12" >
+        <div id="new-comment"></div>
+        </form>
+        {{#each comments as |comment|}}
+        <div>
+        {{!-- <p>{{user.username}}</p> --}}
+        <p>{{comment.comment}}</p>
+        </div>
+        {{/each}}
+      </div>      
     </div>
   </div>
 </div>
 {{/each}}
 </div>
+
+ <div class="parallax-container">
+      <div class="parallax"><img src="Parallax_IMGS/volcano_blue_pink.jpg"></div>
+    </div>
+
+
 {{!-- Success modal, comment was added correctly --}}
   <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+  {{!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> --}}
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -81,7 +108,7 @@
 
 
 {{!-- Error modal, if comment was not added --}}
-  <button data-target="modal2" class="btn  red darken-1 modal-trigger">Modal</button>
+  {{!-- <button data-target="modal2" class="btn  red darken-1 modal-trigger">Modal</button> --}}
   <!-- Modal Structure -->
   <div id="modal2" class="modal">
     <div class="modal-content">
@@ -94,3 +121,4 @@
   </div>
  </div>
  <div>
+

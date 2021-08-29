@@ -18,17 +18,34 @@
     </div>
   </nav>
 
+{{!-- Having issues here, trying to grab the username and email from Users model but it's not working --}}
+
     <ul id="slide-out" class="sidenav blue lighten-5">
+      {{#if loggedIn}}
+      {{#each users as |user|}}
       <li>
         <div class="user-view">
           <div class="background"></div>
           <a href="#user"></a>
-          <a href="#name"><span class="black-text name">name</span></a>
+          <a href="#name"><span class="black-text name">{{user.username}}</span></a>
           <a href="#email"
-            ><span class="black-text email">email</span></a
+            ><span class="black-text email">{{user.email}}</span></a
           >
         </div>
       </li>
+      {{/each}}
+      {{else}}
+      <li>
+        <div class="user-view">
+          <div class="background"></div>
+          <a href="#user"></a>
+          <a href="#name"><span class="black-text name">User Name</span></a>
+          <a href="#email"
+            ><span class="black-text email">Email</span></a
+          >
+        </div>
+      </li>
+      {{/if}}
       <li>
         <a href="/" class="waves-effect"><i class="material-icons">assignment</i>Home</a>
       </li>
@@ -77,5 +94,6 @@
     <script src="/js/login.js"></script>
     <script src="/js/logout.js"></script>
     <script src="/js/signup.js"></script>
+       <script src="/js/newComment.js"></script>
   </body>
 </html>
