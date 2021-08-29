@@ -8,6 +8,14 @@ footer {
   padding-left: 300px;
 }
 
+.date-container {
+  display: flex;
+}
+
+#ending-date {
+  padding-left: 3px;
+}
+
 @media only screen and (max-width: 992px) {
   header,
   main,

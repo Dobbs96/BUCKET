@@ -24,16 +24,17 @@
 ------------- Edit Button
 Stephanie }}
 {{#each travels as |travel|}}
-   <div class="row">
+<div class="row">
   <div class="col s12 m9">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
         <span class="card-title">{{location}} </span>
-        <p>{{format_date starting_date}} to {{format_date ending_date}}</p>
+        <div class="date-container">
+          <div>{{format_date starting_date}} to</div>
+          <div>{{format_date ending_date}}</div>
+        </div>
         <p>Budget: ${{budget}}</p>
         <p>{{what_do}}</p>
-
-
       </div>
       <div class="card-action">
         <button href="" data-target="modal8" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
@@ -42,6 +43,75 @@ Stephanie }}
     </div>
   </div>
 </div>
+
+ <!-- Update Travel -->
+ {{!-- <div class="travel-card-container"> --}}
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <h4>Update:</h4>
+      <div class="row">
+        <div class="travel-card-container">
+        <form class="col s12 new-post-travel" action="/api/travel/{{id}}" method="PUT">
+        {{!-- <form class="col s12 new-post-travel"> --}}
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="location" data-location="{{location}}" name="location" type="text" value="{{location}}" required />
+              <label class="active" for="location">{{location}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="budget" data-budget="{{budget}}" name="budget" type="text" value="{{budget}}" required/>
+              <label class="active" for="budget">{{budget}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="starting-date" data-starting-date="{{format_date starting_date}}" name="starting_date" type="text" value="{{format_date starting_date}}" required/>
+              <label class="active" for="starting_date">{{format_date starting_date}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="ending-date" data-ending-date="{{format_date ending_date}}" name="ending_date" type="text" value="{{format_date ending_date}}" required/>
+              <label class="active" for="ending_date">{{format_date ending_date}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="what-do" data-whatdo="{{what_do}}" type="text" name="what_do" value="{{what_do}}" required/>
+              <label class="active" for="description">{{what_do}}</label>
+            </div>
+          </div>
+          <button
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+            id="updateTravelBtn"
+            data-id="{{id}}"
+          >Update
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+        </div>
+        {{!-- <button
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+            id="updateTravelBtn"
+            data-id="{{id}}"
+          >Update
+            <i class="material-icons right">send</i>
+          </button> --}}
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+{{!-- </div> --}}
+
+
 {{/each}}
 {{#each recipes as |recipe|}}
 <div class="row">
@@ -94,58 +164,7 @@ Stephanie }}
  <div>
  {{!-- On edit --}}
   
-  <!-- Update Travel -->
-  <div id="modal8" class="modal">
-    <div class="modal-content">
-      <h4>Update:</h4>
-      <div class="row">
-    <form class="col s12 new-post-travel" action="/api/travel" method="PUT">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="location" name="location" type="text" required />
-          <label for="location">Location</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="budget" name="budget" type="text" required/>
-          <label for="budget">Budget</label>
-        </div>
-      </div>
-      <div class="row">
-      <div class="input-field col s6">
-        <input id="starting_date" name="starting_date" type="text" required/>
-        <label for="starting_date">Start Date</label>
-      </div>
-    </div>
-    <div class="row">
-    <div class="input-field col s6">
-      <input id="ending_date" name="ending_date" type="text" required/>
-      <label for="ending_date">Ending Date</label>
-    </div>
-  </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="description" name="description" type="text" required/>
-          <label for="description">Description</label>
-        </div>
-      </div>
-      <button
-        class="btn waves-effect waves-light"
-        type="submit"
-        name="action"
-      >Submit
-        <i class="material-icons right">send</i>
-      </button>
-    </form>
-  </div>`
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
-    </div>
-  </div>
- </div>
- <div>
+
 
   <!-- Update Recipe -->
   <div id="modal9" class="modal">
@@ -233,3 +252,4 @@ Stephanie }}
  <div>
 
 <script src="/js/newPost.js"></script>
+{{!-- <script src="/js/updatePost.js"></script> --}}
