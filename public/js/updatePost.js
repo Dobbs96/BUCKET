@@ -2,7 +2,7 @@ const updateTravelPost = async (event) => {
   event.preventDefault();
 
   const travelBtn = document.querySelector("#updateTrvlBtn");
-  travelId = travelBtn.getAttribute("data-id");
+  const travelId = travelBtn.getAttribute("data-id");
 
   const location = document.querySelector("#location").value;
   const budget = document.querySelector("#budget").value;
