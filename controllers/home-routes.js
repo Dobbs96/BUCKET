@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
   );
   const recipes = await recipeData.map((recipe) => recipe.get({ plain: true }));
   const travels = await travelData.map((travel) => travel.get({ plain: true }));
-  console.log(travels);
+  //console.log(travels);
   res.render("home", {
     experiences,
     recipes,

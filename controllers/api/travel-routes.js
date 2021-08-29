@@ -27,9 +27,20 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  console.log("inside travel-routes ------");
+  console.log("req.params.id", req.params.id);
+  console.log(req.body);
   // update a Travel by its `id` value
   const updateTravelData = await Travel.update(req.body, {
     where: { id: req.params.id },
+    // let { location, budget, what_do, starting_date, ending_date } = req.body;
+    // const newTravel = await Travel.update({
+    //   where: { id: req.params.id },
+    //   location,
+    //   budget,
+    //   what_do,
+    //   starting_date,
+    //   ending_date,
   }).catch((err) => res.status(500).json(err));
   if (!updateTravelData[0]) {
     return res.status(404).json({
@@ -37,6 +48,7 @@ router.put("/:id", async (req, res) => {
     });
   }
   res.status(200).json({ message: "Your Travel was updated successfuly." });
+  //res.redirect("/dashboard");
 });
 
 router.delete("/:id", async (req, res) => {
