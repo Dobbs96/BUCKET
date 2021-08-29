@@ -45,9 +45,14 @@ router.delete("/:id", async (req, res) => {
       error_message: `Cannot be deleted because the Experience with ID ${req.params.id} does not exist.`,
     });
   }
-  res
-    .status(200)
-    .json({ message: "The Experience has successfully been deleted." });
+  return (
+    res
+      .status(200)
+      //.json({ message: "The Experience has successfully been deleted." });
+      .json(deletedExperience)
+      .send()
+      .end()
+  );
 });
 
 module.exports = router;
