@@ -24,15 +24,25 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   // update a Experience by its `id` value
-  const updateExperienceData = await Experience.update(req.body, {
-    where: { id: req.params.id },
-  }).catch((err) => res.status(500).json(err));
-  if (!updateExperienceData[0]) {
-    return res.status(404).json({
-      error_message: `No update done since Experience ID ${req.params.id} doesn't exist. Please double check your Experience ID.`,
-    });
-  }
-  res.status(200).json({ message: "Your Experience was updated successfuly." });
+  const updateExperienceData = await Experience.update(
+    {
+      what_do: req.body.whatDoModalData,
+      budget: req.body.budgetModalData,
+      rating: req.body.ratingModalData,
+    },
+    {
+      where: { id: req.params.id },
+    }
+  ).catch((err) => res.status(500).json(err));
+  // if (!updateExperienceData[0]) {
+  //   return res.status(404).json({
+  //     error_message: `No update done since Experience ID ${req.params.id} doesn't exist. Please double check your Experience ID.`,
+  //   });
+  // }
+  return res
+    .status(200)
+    .json({ message: "Your Experience was updated successfuly." })
+    .send();
 });
 
 router.delete("/:id", async (req, res) => {

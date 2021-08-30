@@ -20,6 +20,9 @@ function deleteTrvlBtnHandlebarsHandler(event) {
     //   alert("Failed to delete Travel information");
     // }
   }
+  // if (event.target.innerHTML === "Update") {
+  //   console.log("Travel button clicked is Update!");
+  // }
 }
 
 //Handle Recipe Button
@@ -75,7 +78,7 @@ function deleteExperienceBtnHandlebarsHandler(event) {
 }
 
 document
-  .querySelector(".testContainerTravel")
+  .querySelector(".testContainerTravelDelete")
   .addEventListener("click", deleteTrvlBtnHandlebarsHandler);
 
 document

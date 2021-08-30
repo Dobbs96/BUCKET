@@ -22,7 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
 //--------------Modals
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
+  console.log("inside modal index.js ===========");
+  console.log(elems);
   var instances = M.Modal.init(elems, optionsModal);
+  console.log(instances);
+  console.log("inside modal index.js ===========");
 });
 
 //---------------Parallax
