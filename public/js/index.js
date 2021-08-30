@@ -5,9 +5,6 @@ const optionsSideNav = {
 
 const optionsModal = {
   //modal options
-  onCloseEnd: () => {
-    console.log("function yes?");
-  },
 };
 
 const optionsPara = {
