@@ -86,7 +86,7 @@
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
-          id="updateTrvlBtn"
+          id="modaleUpdateTrvlBtn"
           data-id="{{id}}"
         >Update
           <i class="material-icons right">send</i>
@@ -113,7 +113,7 @@
         <p>{{link}}</p>
       </div>
       <div class="card-action">
-        <button href="#" data-target="modal9" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
+        <button href="#" id="updateRecipeBtnHandlebars{{id}}" data-target="modal{{id}}" data-id="{{id}}" data-name="{{name}}" data-price="{{price}}" data-link="{{link}}" data-target="modal{{id}}" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
         <button href="#" id="deleteRecipeBtnHandlebars{{id}}" data-id="{{id}}" class="btn hoverable btn-small white-text amber darken-1">Delete</button>
       </div>
     </div>
@@ -176,7 +176,7 @@
       <p>Rate of going is {{rating}} out of 5</p>
     </div>
     <div class="card-action">
-      <button href="" data-target="modal10" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
+      <button href="" id="updateTrvlExperienceHandlebars{{id}}" data-target="modal{{id}}" data-id="{{id}}" data-whatdo="{{what_do}}" data-budget="{{budget}}" data-rating="{{rating}}" data-target="modal{{id}}" class="btn hoverable btn-small white-text amber darken-1 modal-trigger">Update</button>
       <button href="#" id="deleteExperienceBtnHandlebars{{id}}" data-id="{{id}}" class="btn hoverable btn-small white-text amber darken-1">Delete</button>
     </div>
   </div>
@@ -188,7 +188,8 @@
   <div class="modal-content">
     <h4>Update: Experience</h4>
     <div class="row">
-      <form class="col s12 new-post-experience" action="/api/experience" method="POST">
+      {{!-- <form class="col s12 new-post-experience" action="/api/experience" method="POST"> --}}
+      <form class="col s12 new-post-experience">
         <div class="row">
           <div class="input-field col s6">
             <input id="what-do" type="text" name="what_do" data-length="10" value="{{what_do}}" required />
@@ -247,5 +248,6 @@
 </div>
 
 <script src="/js/newPost.js"></script>
-<script src="/js/updatePost.js"></script>
-<script src="/js/deletePost.js"></script>
+{{!-- <script src="/js/deletePost.js"></script>
+<script src="/js/updatePost.js"></script> --}}
+<script src="/js/handlePost.js"></script>

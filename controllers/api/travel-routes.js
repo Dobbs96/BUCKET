@@ -27,16 +27,31 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  console.log("inside travel-routes.js PUT endpoint");
+  console.log(req.params.id);
+  console.log(req.body);
   // update a Travel by its `id` value
-  const updateTravelData = await Travel.update(req.body, {
-    where: { id: req.params.id },
-  }).catch((err) => res.status(500).json(err));
-  if (!updateTravelData[0]) {
-    return res.status(404).json({
-      error_message: `No update done since Travel ID ${req.params.id} doesn't exist. Please double check your Travel ID.`,
-    });
-  }
-  res.status(200).json({ message: "Your Travel was updated successfuly." });
+  const updateTravelData = await Travel.update(
+    {
+      location: req.body.locationModalData,
+      budget: req.body.budgetModalData,
+      what_do: req.body.whatDoModalData,
+      starting_date: req.body.startingDateModalData,
+      ending_date: req.body.endingDateModalData,
+    },
+    {
+      where: { id: req.params.id },
+    }
+  ).catch((err) => res.status(500).json(err));
+  // if (!updateTravelData) {
+  //   return res.status(404).json({
+  //     error_message: `No update done since Travel ID ${req.params.id} doesn't exist. Please double check your Travel ID.`,
+  //   });
+  // }
+  return res
+    .status(200)
+    .json({ message: "Your Travel was updated successfuly." })
+    .send();
 });
 
 router.delete("/:id", async (req, res) => {
