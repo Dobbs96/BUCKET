@@ -8,6 +8,14 @@ footer {
   padding-left: 300px;
 }
 
+h1 h2 h3 h4 {
+  font-family: "Hina Mincho", serif;
+}
+
+a p li {
+  font-family: "'Alegreya', serif;";
+}
+
 .date-container {
   display: flex;
 }

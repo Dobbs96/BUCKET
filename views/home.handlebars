@@ -1,3 +1,9 @@
+  <nav>
+    <div class="nav-wrapper blue lighten-5">
+      <a href="/" class="black-text text-lighten-4 brand-logo center">BUCKET</a>
+    </div>
+  </nav>
+ 
  <div class="parallax-container">
       <div class="parallax"><img src="Parallax_IMGS/desert_blue.jpg"></div>
     </div>
@@ -23,7 +29,7 @@
         {{#each comments as |comment|}}
         <div>
         {{!-- <p>{{user.username}}</p> --}}
-        <p>{{comment.comment}}</p>
+        <p class="card-content white-text">{{comment.comment}}</p>
         </div>
         {{/each}}
       </div>
@@ -49,7 +55,7 @@
         {{#each comments as |comment|}}
         <div>
         {{!-- <p>{{user.username}}</p> --}}
-        <p>{{comment.comment}}</p>
+        <p class="card-content white text">{{comment.comment}}</p>
         </div>
         {{/each}}
       </div>
@@ -75,7 +81,7 @@
         {{#each comments as |comment|}}
         <div>
         {{!-- <p>{{user.username}}</p> --}}
-        <p>{{comment.comment}}</p>
+        <p class="card-content white-text">{{comment.comment}}</p>
         </div>
         {{/each}}
       </div>      
